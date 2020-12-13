@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;    
+}
+
+body {
+    background-color: rgb(204, 50, 58);
+    color: black;    
+}
+
+h1 {
+    padding: 2rem;
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    color: rgb(204, 50, 58);
+    font-weight: 500;
+}
+
+p {
+    margin: 1rem .1rem;
+}
+
+.day {
+    margin-top: .5rem;
+}
+
+.todo-container {
+    width: 50rem;
+    border-radius: 5px;
+    background-color: rgb(228, 215, 215);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 2rem;    
+}
+
+.input-box {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.input {
+    flex: 1 1 0;
+    margin-right: 1rem;
+    padding-left: 1rem; 
+    border: 1px solid black;
+    color: black;
+    border-radius: 3px;
+    font-size: 1rem; 
+    font-weight: 200;
+}
+
+.pending-todos-box {
+    flex: 1 1 0;
+}
+
+.show-in {
+    animation-name: show-in;
+    animation-duration: .1s;
+}
+
+.todos {
+    background-color: rgba(0, 0, 0,.1);
+    padding: .6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .5rem;
+    position: relative;   
+    border-radius: 3px;
+}
+
+.input-label-box {
+    display: flex;
+    align-items: center;
+}
+
+.todos:hover.todos::after {
+    position: absolute;
+    content: "\f014";
+    font-family: FontAwesome;
+    right: 0;
+    background-color: red;
+    height: 100%;
+    width: 2.5rem;
+    cursor: pointer;
+    text-align: center;
+    line-height: 2.5rem;
+    color: white;
+    animation-name: fade-in;
+    animation-duration: .2s;
+}
+
+@keyframes fade-in {
+    0% {
+        width: 0;
+        content:'';
+    }
+    100% {
+        width: 2.5rem;
+        content: "\f014";
+    }
+}
+
+input[type='checkbox'] {
+    width: 1.5rem; 
+    height: 1.5rem;    
+    cursor: pointer;
+}
+
+input[type='checkbox']:checked {
+    display: none;
+}
+
+input[type='checkbox']:checked + label::before {
+    content: '\2714';
+    color: red;
+    background-color: rgba(0, 0, 0,.01);
+    text-align: center;
+    display: inline-block;
+    width: 1.5rem;
+    margin-right: .5rem;
+    border: 1px solid rgba(0, 0, 0,.3);
+    font-weight: 800;
+}
+
+label {
+    margin-left: 0.5rem;
+}
+
+input[type='checkbox']:checked + label {
+    margin-left: 0;
+    text-decoration: line-through;
+}
+
+.hide {
+    display: none;
+}
+
+.checked {
+    background-color: white;
+}
+
+.trash {
+    width: 2.5rem;
+    height: 1.5rem;
+    z-index: 1;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    background: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: .5rem 1.5rem;    
+    border-radius: 3px;
+    outline: none;
+}
+
+.add {
+    background-color: rgba(0, 0, 0,.1);
+    color: white;
+    font-size: 1.5rem;
+}
+
+.add:hover {
+    background-color: rgb(45, 87, 212);
+}
+
+.hide-completed:hover, .clear:hover {
+    background-color: rgba(0, 0, 0,.5);
+    color: white;
+}
+
+.todo__footer {
+    display: flex;
+    justify-content: center;
+    padding-top: .5rem;
+}
+
+@keyframes show-in {
+    0% {
+        opacity: 0;
+        width: 0
+    }
+    100% {
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+.chill { 
+    text-align: center;    
+    font-weight: 600; 
+    color: black;
+    padding-top: 2rem;
+}
+
+img {
+    flex: 1 1 0;
+    height: 8rem;
+}

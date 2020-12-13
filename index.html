@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <h1>Daily To-Do list manager</h1>
+    <div class="todo-container">
+        <h2 class="day"></h2>
+        <h2 class="date"></h2>
+        <form class="input-box">
+            <input type="text" class="input" placeholder="Take the garbage out">
+            <button type="submit" class="add">+</button>
+        </form>
+        <p>You have <span class="pending-count"></span> pending items</p>
+        <div class="no-todos"></div>
+        <div class="pending-todos-box"></div>
+        <div class="completed-todos-box hide"></div>
+        <div class="todo__footer">
+            <button class="hide-completed">Show Complete</button>
+            <button class="clear">Clear All</button>
+        </div>
+    </div>
+    <script src="./js/todo.js"></script>
+</body>
+
+</html>
